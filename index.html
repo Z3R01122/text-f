@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom New Tab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <button id="settings-toggle" class="settings-toggle" type="button" aria-expanded="false" aria-controls="settings-panel">
+      ⚙ Settings
+    </button>
+
+    <aside id="settings-panel" class="settings-panel" hidden>
+      <h2>Settings</h2>
+      <section>
+        <h3>Background Image</h3>
+        <div class="bg-controls">
+          <input id="bg-url" type="url" placeholder="Paste image URL" />
+          <input id="bg-file" type="file" accept="image/*" />
+          <button id="apply-bg" type="button">Apply Background</button>
+          <button id="clear-bg" type="button">Clear</button>
+        </div>
+      </section>
+    </aside>
+
+    <main class="page">
+      <header class="search-panel">
+        <h1>Search</h1>
+        <form id="search-form" class="search-form">
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search the web..."
+            autocomplete="off"
+          />
+          <select id="search-engine" aria-label="Select search engine">
+            <option value="https://www.google.com/search?q=">Google</option>
+            <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
+            <option value="https://www.bing.com/search?q=">Bing</option>
+            <option value="https://search.yahoo.com/search?p=">Yahoo</option>
+          </select>
+          <button type="submit">Search</button>
+        </form>
+      </header>
+
+      <section class="grid-panel">
+        <div class="grid-header">
+          <h2>Button Grids (7 × 5)</h2>
+          <button id="add-grid" type="button">Add 7×5 Grid</button>
+        </div>
+        <div id="grid-wrapper"></div>
+      </section>
+
+      <p id="status" class="status" aria-live="polite"></p>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
